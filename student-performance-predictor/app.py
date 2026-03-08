@@ -30,12 +30,15 @@ text-align:center;
 </style>
 """, unsafe_allow_html=True)
 
+import os
+
 @st.cache_data
 def load_data():
-    generate_student_data(200)
+    if not os.path.exists("dataset/student_data.csv"):
+        generate_student_data(200)
+
     data = pd.read_csv("dataset/student_data.csv")
     return data
-
 @st.cache_resource
 def train_model():
     data = load_data()
