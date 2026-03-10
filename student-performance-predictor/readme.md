@@ -4,7 +4,8 @@ A Machine Learning web application that predicts a student's exam score based on
 The project uses a **Linear Regression model** and provides an **interactive dashboard built with Streamlit** to visualize data and generate predictions.
 
 ---
-
+## ☯️ Live Demo
+ https://student-performance-predictor-wy8lzjce8uk7xdwaemgb7d.streamlit.app/
 ## 🚀 Features
 
 * Interactive **web UI built with Streamlit**
