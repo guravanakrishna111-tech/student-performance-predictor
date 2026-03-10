@@ -34,10 +34,14 @@ import os
 
 @st.cache_data
 def load_data():
-    if not os.path.exists("dataset/student_data.csv"):
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(BASE_DIR, "dataset", "student_data.csv")
+
+    if not os.path.exists(data_path):
         generate_student_data(200)
 
-    data = pd.read_csv("dataset/student_data.csv")
+    data = pd.read_csv(data_path)
     return data
 @st.cache_resource
 def train_model():
