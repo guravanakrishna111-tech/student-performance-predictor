@@ -59,5 +59,8 @@ new_student = pd.DataFrame(
 )
 
 predicted_score = model.predict(new_student)
-
+if predicted_score>100:
+    predicted_score=100
+if predicted_score<0:
+    predicted_score=0
 print("Predicted Exam Score:",predicted_score[0])
