@@ -75,6 +75,10 @@ if predict:
         columns=["studyHours","sleepHours","previousScore","practiceTests"]
     )
     predicted_score = model.predict(new_student)
+    if predicted_score>100:
+        predicted_score=100
+    if predicted_score<0:
+        predicted_score=0
     st.markdown(f'<div class="prediction">Predicted Exam Score: {predicted_score[0]:.2f}</div>', unsafe_allow_html=True)
 
 col1,col2 = st.columns(2)
